@@ -10,8 +10,10 @@ const nav = [{link:'/books',name:'books'},
 
             {link:'/login',name:'login'},
         {link:'/signup',name:'signup'},
-        {link:'/Add Book', name:'add book'},
-        {link:'/Add Authors', name:'add authors'}
+        {link:'/admin', name:'Add book'},
+        
+
+        {link:'/addauthor', name:'Add authors'}
     ];
 
 const booksRouter= require('./src/routes/bookRoutes')(nav);
@@ -21,6 +23,10 @@ const authorRouter= require('./src/routes/authorRoutes')(nav);
 const loginRouter= require('./src/routes/loginRoutes')(nav);
 
 const signupRouter= require('./src/routes/signupRoutes')(nav);
+const adminRouter= require('./src/routes/adminRoutes')(nav);
+
+const addauthorRouter= require('./src/routes/addauthorRoutes')(nav);
+
 
 
 
@@ -31,6 +37,8 @@ app.use('/books', booksRouter);
 app.use('/authors', authorRouter);
 app.use('/login', loginRouter);
 app.use('/signup', signupRouter);
+app.use('/admin', adminRouter);
+app.use('/addauthor', addauthorRouter);
 
 
 app.get('/',function(req,res){
@@ -45,4 +53,5 @@ app.get('/',function(req,res){
 
 
 app.listen(port,()=>{console.log("server ready at " +port)});
+
 

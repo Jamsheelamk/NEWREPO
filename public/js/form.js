@@ -115,13 +115,14 @@ function validatePassword(){
             }
 
 function validateunam(){
-    if (unam.value='admin'){
-        return true;
+    if (unam.value!="admin"){
+      error3.innerHTML="admin";
+        return false;
     }
     else{
-        error3.innerHTML="admin";
-        error3.style.color="red";
-        return false;
+        
+        
+        return true;
     }
 }
 
