@@ -2,7 +2,7 @@
 
 const express= require("express");
 const app= express();
-const port=process.env.port||2000;
+const port=PROCESS.ENV.PORT||2000;
 
 const nav = [{link:'/books',name:'books'},
              
@@ -26,9 +26,6 @@ const signupRouter= require('./src/routes/signupRoutes')(nav);
 const adminRouter= require('./src/routes/adminRoutes')(nav);
 
 const addauthorRouter= require('./src/routes/addauthorRoutes')(nav);
-
-
-
 
 app.use(express.static('./public'));
 app.set('view engine','ejs');
